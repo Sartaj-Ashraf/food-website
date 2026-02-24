@@ -1,0 +1,52 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "setup-project": "cd ../frontend && npm install && cd ../backend && npm install && cd ../admin-dashboard && npm install",
+    "setup-production-app": "cd ../frontend && npm install && npm run build && cd ../backend && npm install && cd ../admin-dashboard && npm install && npm run build",
+    "server": "nodemon server.js",
+    "admin": "cd ../admin-dashboard && npm run dev",
+    "client": "cd ../frontend && npm run dev",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run admin\" \"npm run client\""
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.6.1",
+    "concurrently": "^9.1.2",
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.5.0",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^7.5.1",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.2",
+    "nanoid": "^5.1.5",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^7.0.3",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "razorpay": "^2.9.6",
+    "sharp": "^0.34.3",
+    "twilio": "^5.8.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

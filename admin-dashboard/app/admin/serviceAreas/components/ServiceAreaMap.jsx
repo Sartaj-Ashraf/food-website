@@ -3,7 +3,7 @@ import mapboxgl from "mapbox-gl";
 import * as turf from "@turf/turf";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-mapboxgl.accessToken = "pk.eyJ1Ijoic2FydGFqMTIxMiIsImEiOiJjbWZ3OTVhZHEwNmp3MmtzN3A5dmwxNWp4In0.iQ27uu5bRTqSmgyp1HV-7Q";
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
 
 export default function MapboxMap({ serviceAreas = [], singleArea = null, height = "500px" }) {
   const mapContainer = useRef(null);

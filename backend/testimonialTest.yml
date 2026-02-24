@@ -1,0 +1,21 @@
+config:
+  target: "http://localhost:5000" # Change to your deployed URL if testing online
+  phases:
+    - duration: 30
+      arrivalRate: 50 # Adjust depending on how heavy you want the load
+      name: "50 testimonials in 30 seconds"
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - flow:
+      - post:
+          url: "/api/v1/testimonials" 
+          json:
+            rating: "{{ $randomNumber(1,5) }}"
+            review: "This is a load test review number {{ $loopCount }}"
+            name: "Test User {{ $loopCount }}"
+            source: "google"
+            sourceLink: "https://example.com/review/{{ $loopCount }}"
+            isFeatured: false
