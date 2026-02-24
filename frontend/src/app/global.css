@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+    --primary-color: #5A432A;
+    --primary-second-color: #8b6f47;
+    --secondary-color: #c9994d;
+    --accent-color: #D9AF6B;
+    --border-color: #BDB2A1;
+    --text-color:   #a0855c;
+    --background-color: #F7F2E9;
+    --background-second-color:#e8ddd0;
+    --save-color: green;
+    
+    --delete-color: #940d0d;
+    --delete-color-hover:#9b000013 ;
+    --white: #fff;
+    --black: #000;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .font-serif {
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+
+@layer utilities {
+  .animate-scroll-up-slow {
+    animation: scrollUp 20s linear infinite;
+  }
+
+  .animate-scroll-up-medium {
+    animation: scrollUp 15s linear infinite;
+  }
+
+  .animate-scroll-up-fast {
+    animation: scrollUp 12s linear infinite;
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.sideSpace{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Media quiers for container */
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  --bs-gutter-x: 1.875rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container-sm,
+  .container {
+    max-width: 96%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 94%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 94%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1200px;
+  }
+}
